@@ -19,21 +19,6 @@
 	  <scope>test</scope>
 	</dependency>
   </dependencies>
-   <!-- 解决默认jdk为1.5的问题 -->
-  <profiles>
-   	 <profile>
-        <id>jdk-1.8</id>
-        <activation>
-            <activeByDefault>true</activeByDefault>
-            <jdk>1.8</jdk>
-        </activation>
-        <properties>
-            <maven.compiler.source>1.8</maven.compiler.source>
-            <maven.compiler.target>1.8</maven.compiler.target>
-			<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
-        </properties>
-    </profile>
-   </profiles>
   <modules>
   	<module>dydao-core</module>
   	<module>dydao-hibernate</module>
@@ -41,4 +26,30 @@
     <module>dydao-jdbc</module>
     <module>dydao-mybatis</module>
   </modules>
+  <build>  
+        <pluginManagement>  
+            <plugins>  
+                <plugin>  
+                    <groupId>org.apache.maven.plugins</groupId>  
+                    <artifactId>maven-archetype-plugin</artifactId>  
+                    <version>2.2</version>  
+                </plugin>  
+                <plugin>  
+                    <groupId>org.apache.maven.plugins</groupId>  
+                    <artifactId>maven-compiler-plugin</artifactId>  
+                    <configuration>  
+                        <source>1.8</source>  
+                        <target>1.8</target>  
+                    </configuration>  
+                </plugin>  
+                <plugin>  
+                    <groupId>org.apache.maven.plugins</groupId>  
+                    <artifactId>maven-resources-plugin</artifactId>  
+                    <configuration>  
+                        <encoding>UTF-8</encoding>  
+                    </configuration>  
+                </plugin>  
+            </plugins>  
+        </pluginManagement>  
+    </build> 
 </project>
